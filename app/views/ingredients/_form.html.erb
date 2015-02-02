@@ -1,0 +1,8 @@
+<%= simple_form_for @ingredient do |f| %>
+	<%= f.input :reciever, placeholder: "Ingrediënt" %>
+	<%= f.input :from, placeholder: "Van"%>
+	<%= f.input :to, placeholder: "Naar" %>
+	<%= f.input :contents, placeholder: "Beschrijving" %>
+	<%= f.submit "Toevoegen", class: "btn btn-primary btn-sm"%>
+<% end %>
+<br/>

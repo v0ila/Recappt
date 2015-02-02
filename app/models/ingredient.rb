@@ -1,4 +1,4 @@
-class Delivery < ActiveRecord::Base
+class Ingredient < ActiveRecord::Base
    
    before_save :from_to_geocode
    

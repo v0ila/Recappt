@@ -1,6 +1,6 @@
-class CreateDeliveries < ActiveRecord::Migration
+class CreateIngredients < ActiveRecord::Migration
   def change
-    create_table :deliveries do |t|
+    create_table :ingredients do |t|
       t.string :sender
       t.string :reciever
       t.string :from

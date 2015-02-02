@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150124214759) do
 
-  create_table "deliveries", force: :cascade do |t|
+  create_table "ingredients", force: :cascade do |t|
     t.string   "sender"
     t.string   "reciever"
     t.string   "from"

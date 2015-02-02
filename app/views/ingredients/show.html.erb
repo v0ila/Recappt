@@ -4,31 +4,31 @@
 	<div class="col-md-5">
 	<p>
 	  <strong>Sender:</strong>
-	  <%= @delivery.sender %>
+	  <%= @ingredient.sender %>
 	</p>
 
 	<p>
 	  <strong>Reciever:</strong>
-	  <%= @delivery.reciever %>
+	  <%= @ingredient.reciever %>
 	</p>
 
 	<p>
 	  <strong>From:</strong>
-	  <%= @delivery.from %>
+	  <%= @ingredient.from %>
 	</p>
 
 	<p>
 	  <strong>To:</strong>
-	  <%= @delivery.to %>
+	  <%= @ingredient.to %>
 	</p>
 
 	<p>
 	  <strong>Contents:</strong>
-	  <%= @delivery.contents %>
+	  <%= @ingredient.contents %>
 	</p>
 
-	<%= link_to 'Edit', edit_delivery_path(@delivery) %> |
-	<%= link_to 'Back', deliveries_path %>
+	<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+	<%= link_to 'Back', ingredients_path %>
 </div>
 <div class="col-md-7">
 	<div style='width: 800px;'>
