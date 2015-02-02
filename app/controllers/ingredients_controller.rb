@@ -33,7 +33,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to @ingredient, notice: 'Inhgrediënt toegevoegd.' }
+        format.html { redirect_to @ingredient, notice: 'Ingrediënt toegevoegd.' }
         format.json { render :show, status: :created, location: @ingredient }
       else
         format.html { render :new }
