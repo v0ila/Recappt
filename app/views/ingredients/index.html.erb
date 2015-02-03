@@ -1,33 +1,53 @@
 <p id="notice"><%= notice %></p>
-
-<h4>Ingrediënten</h4>
-
-<table class="table">
+<table class="u-full-width">
   <thead>
     <tr>
       <th>Ingredient</th>
       <th>Van</th>
       <th>Naar</th>
       <th>Beschrijving</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @ingredients.each do |ingredient| %>
-      <tr>
-        <td><%= ingredient.reciever %></td>
-        <td><%= ingredient.from %></td>
-        <td><%= ingredient.to %></td>
-        <td><%= ingredient.contents %></td>
-        <td><%= link_to 'Bekijken', ingredient %></td>
-        <td><%= link_to 'Aanpassen', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Verwijderen', ingredient, method: :delete, data: { confirm: 'Bevestig verwijdering van ingrediënt' } %></td>
-      </tr>
+   <% @ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= ingredient.reciever %></td>
+      <td><%= ingredient.from %></td>
+      <td><%= ingredient.to %></td>
+      <td><%= ingredient.contents %></td>
+      <td><%= link_to 'Bekijken', ingredient %></td>
+      <td><%= link_to 'Aanpassen', edit_ingredient_path(ingredient) %></td>
+      <td><%= link_to 'Verwijderen', ingredient, method: :delete, data: { confirm: 'Bevestig verwijdering van ingrediënt' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
-
+<%= link_to 'Nieuw ingredient', new_ingredient_path, :class => "button" %>
 <br>
+<div class="row">
+<div class="two columns">
+ <div style='width: 800px;'>
+    <div id="geolocation" style='width: 800px; height: 400px;'></div>
+  </div>
+  </div>
+  </div>
 
-<%= link_to 'Nieuw ingredient', new_ingredient_path %>
+<script type="text/javascript">
+  var handler = Gmaps.build('Google');
+  
+handler.buildMap({ internal: {id: 'geolocation'} }, function(){
+  if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(displayOnMap);
+});
+
+function displayOnMap(position){
+
+  var marker = handler.addMarker({
+    lat: position.coords.latitude,
+    lng: position.coords.longitude
+
+  });
+  handler.map.centerOn(marker);
+};
+</script>
+

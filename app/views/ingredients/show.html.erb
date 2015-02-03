@@ -1,12 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 <div class="row">
-	<div class="five columns">
-	<p>
-	  <strong>Sender:</strong>
-	  <%= @ingredient.sender %>
-	</p>
-
+	<div class="four columns">
 	<p>
 	  <strong>Reciever:</strong>
 	  <%= @ingredient.reciever %>
@@ -27,8 +22,8 @@
 	  <%= @ingredient.contents %>
 	</p>
 
-	<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-	<%= link_to 'Back', ingredients_path %>
+	<%= link_to 'Aanpassen', edit_ingredient_path(@ingredient) %> |
+	<%= link_to 'Terug', ingredients_path %>
 </div>
 <div class="seven columns">
 	<div style='width: 800px;'>
@@ -50,11 +45,11 @@ function calcRoute() {
   var request = {
       origin:      origin,
       destination: destination,
-      travelMode:  google.maps.TravelMode.DRIVING
+      travelMode:  google.maps.TravelMode.WALKING
   };
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
+      directionsDisplay.setDirections(response);	
     }
   });
 }
